@@ -7,3 +7,9 @@ This chapter include the following sections:
 [Visualization with seaborn](seaborn.ipynb)
 
 [Visualization with plotly](plotly.ipynb)
+
+
+
+Exercises can be found below:
+
+[Exercise on data visualization](exercise_visual.ipynb)
