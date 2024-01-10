@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Data Analysis Basics &#8212; Python Tutorial</title>
+    <title>Data Visualization with plotly &#8212; Python Tutorial</title>
   
   
   
@@ -62,11 +62,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'data_analysis';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'plotly';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="NumPy Tutorial for Beginners" href="numpy.html" />
-    <link rel="prev" title="Markdown Files" href="markdown.html" />
+    <link rel="next" title="Content with notebooks" href="notebooks.html" />
+    <link rel="prev" title="Seaborn Introduction" href="seaborn.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -178,13 +178,14 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Data Analysis Basics</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="data_analysis.html">Data Analysis Basics</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="numpy.html">NumPy Tutorial for Beginners</a></li>
 <li class="toctree-l2"><a class="reference internal" href="scipy.html">SciPy Tutorial for Beginners</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="data_visual.html">Data Visualization Basics</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="data_visual.html">Data Visualization Basics</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="seaborn.html">Seaborn Introduction</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Data Visualization with plotly</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
@@ -260,7 +261,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdata_analysis.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fplotly.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -290,7 +291,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/data_analysis.md" target="_blank"
+      <li><a href="_sources/plotly.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -300,7 +301,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -374,7 +375,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Data Analysis Basics</h1>
+    <h1>Data Visualization with plotly</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -384,7 +385,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#my-section-title">My section title</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-plotly">Import plotly</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-simple-scatter-plot">Create a simple scatter plot</a></li>
 </ul>
             </nav>
         </div>
@@ -396,14 +399,29 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="data-analysis-basics">
-<h1>Data Analysis Basics<a class="headerlink" href="#data-analysis-basics" title="Permalink to this heading">#</a></h1>
-<section id="my-section-title">
-<h2>My section title<a class="headerlink" href="#my-section-title" title="Permalink to this heading">#</a></h2>
-<p>Here is a <a class="reference internal" href="intro.html"><span class="doc std std-doc">reference to the intro</span></a>.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="data-visualization-with-plotly">
+<h1>Data Visualization with plotly<a class="headerlink" href="#data-visualization-with-plotly" title="Permalink to this heading">#</a></h1>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">#</a></h2>
+<p>You can install Plotly using pip or conda:</p>
+<p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">plotly</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">plotly</span> <span class="pre">plotly=5.18.0</span></code></p>
 </section>
-<div class="toctree-wrapper compound">
+<section id="import-plotly">
+<h2>Import plotly<a class="headerlink" href="#import-plotly" title="Permalink to this heading">#</a></h2>
+<p>To use plotly in your code, you need to import it:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+</pre></div>
 </div>
+</div>
+</div>
+</section>
+<section id="create-a-simple-scatter-plot">
+<h2>Create a simple scatter plot<a class="headerlink" href="#create-a-simple-scatter-plot" title="Permalink to this heading">#</a></h2>
+<p>We are using the Iris dataset that are built-in in the package as an example.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -437,20 +455,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="markdown.html"
+       href="seaborn.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Markdown Files</p>
+        <p class="prev-next-title">Seaborn Introduction</p>
       </div>
     </a>
     <a class="right-next"
-       href="numpy.html"
+       href="notebooks.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">NumPy Tutorial for Beginners</p>
+        <p class="prev-next-title">Content with notebooks</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -470,7 +488,9 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#my-section-title">My section title</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-plotly">Import plotly</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-simple-scatter-plot">Create a simple scatter plot</a></li>
 </ul>
   </nav></div>
 
