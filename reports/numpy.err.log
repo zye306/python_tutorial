@@ -23,18 +23,15 @@ print(filedata)
 # You can index with a list in NumPy
 
 print(filedata[[2, 4, 6, 8, 10, 12, 14, 16, 18, 20]])
-
 print(np.any(filedata > 50, axis=0))
-
 print(np.all(filedata > 50, axis=0))
-
 print((~((filedata > 50) & (filedata < 100))))
 ------------------
 
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mFileNotFoundError[0m                         Traceback (most recent call last)
-Cell [0;32mIn[38], line 2[0m
+Cell [0;32mIn[41], line 2[0m
 [1;32m      1[0m [38;5;66;03m# Challenge[39;00m
 [0;32m----> 2[0m filedata [38;5;241m=[39m [43mnp[49m[38;5;241;43m.[39;49m[43mgenfromtxt[49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43mdata.txt[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[43mdelimiter[49m[38;5;241;43m=[39;49m[38;5;124;43m'[39;49m[38;5;124;43m,[39;49m[38;5;124;43m'[39;49m[43m)[49m
 [1;32m      3[0m filedata [38;5;241m=[39m filedata[38;5;241m.[39mastype([38;5;124m'[39m[38;5;124mint32[39m[38;5;124m'[39m)

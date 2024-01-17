@@ -66,7 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'numpy';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="SciPy Tutorial for Beginners" href="scipy.html" />
+    <link rel="next" title="Introduction to SciPy" href="scipy.html" />
     <link rel="prev" title="2. Data Analysis Basics" href="2_data_analysis.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -178,12 +178,15 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="2_data_analysis.html">2. Data Analysis Basics</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">NumPy Tutorial for Beginners</a></li>
-<li class="toctree-l2"><a class="reference internal" href="scipy.html">SciPy Tutorial for Beginners</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="1_basics.html">Python Basics</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="3_data_visual.html">3. Data Visualization Basics</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="2_data_analysis.html">2. Data Analysis Basics</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">NumPy Tutorial for Beginners</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scipy.html">Introduction to SciPy</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="3_data_visual.html">3. Data Visualization Basics</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="seaborn.html">Seaborn Tutorial for Beginners</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plotly.html">Data Visualization with plotly</a></li>
 <li class="toctree-l2"><a class="reference internal" href="exercise_visual.html">Exercise of Data Visualization</a></li>
@@ -435,30 +438,38 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">0. Introduction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-and-import">1. Installation and Import</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-numpy-using-pip">Install NumPy using pip:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-numpy">Install NumPy</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-numpy">Importing Numpy</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-numpy-arrays-and-get-their-properties">2. Create NumPy Arrays and get their properties</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-creating-arrays">a. Creating Arrays</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-arrays-and-their-properties">2. Create arrays and their properties</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#initializing-numpy-arrays">Initializing NumPy Arrays</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#more-initializing-methods">More initializing methods</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#random-numbers">Random Numbers</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#other">Other</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#be-careful-when-copying-arrays">Be careful when copying arrays!!!</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-get-dimension-and-shape-of-the-arrays">b. Get dimension and shape of the arrays</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-get-the-data-type-item-size-and-total-size-of-the-arrays">c. Get the data type, item size, and total size of the arrays.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hands-on-practice-5-mins">Hands on practice (5 mins)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-changing-specific-elements-rows-columns-etc">3. Accessing/Changing specific elements, rows, columns, etc.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initializing-different-types-of-arrays">4. Initializing Different Types of Arrays</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#be-careful-when-copying-arrays">Be careful when copying arrays!!!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-changing-specific-elements-rows-columns-etc">2. Accessing/Changing specific elements, rows, columns, etc.</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-time-5-mins">Practice time (5 mins)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-operation">5. Array Operation</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-operation">3. Array Operation</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-reorganizing-arrays-reshape-vstack-hstack">b. Reorganizing Arrays (reshape, vstack, hstack)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing">Indexing</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing">Slicing</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shape-and-reshape">Shape and Reshape</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-time">Practice Time</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">Further Reading</a></li>
 </ul>
             </nav>
         </div>
@@ -478,11 +489,15 @@ document.write(`
 </section>
 <section id="installation-and-import">
 <h2>1. Installation and Import<a class="headerlink" href="#installation-and-import" title="Permalink to this heading">#</a></h2>
-<section id="install-numpy-using-pip">
-<h3>Install NumPy using pip:<a class="headerlink" href="#install-numpy-using-pip" title="Permalink to this heading">#</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">numpy</span>
-</pre></div>
-</div>
+<section id="install-numpy">
+<h3>Install NumPy<a class="headerlink" href="#install-numpy" title="Permalink to this heading">#</a></h3>
+<p>Install using pip:</p>
+<p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">numpy</span></code></p>
+<p>Install using conda:</p>
+<p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">numpy</span></code></p>
+<p>Install a specific version:</p>
+<p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">numpy==1.19.5</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">numpy==1.19.5</span></code></p>
 </section>
 <section id="importing-numpy">
 <h3>Importing Numpy<a class="headerlink" href="#importing-numpy" title="Permalink to this heading">#</a></h3>
@@ -495,11 +510,11 @@ document.write(`
 </div>
 </section>
 </section>
-<section id="create-numpy-arrays-and-get-their-properties">
-<h2>2. Create NumPy Arrays and get their properties<a class="headerlink" href="#create-numpy-arrays-and-get-their-properties" title="Permalink to this heading">#</a></h2>
+<section id="create-arrays-and-their-properties">
+<h2>2. Create arrays and their properties<a class="headerlink" href="#create-arrays-and-their-properties" title="Permalink to this heading">#</a></h2>
 <p>Create arrays using numpy, and get their properties such as dimension, shape, data type, itemsize, total size, etc.</p>
-<section id="a-creating-arrays">
-<h3>a. Creating Arrays<a class="headerlink" href="#a-creating-arrays" title="Permalink to this heading">#</a></h3>
+<section id="initializing-numpy-arrays">
+<h3>Initializing NumPy Arrays<a class="headerlink" href="#initializing-numpy-arrays" title="Permalink to this heading">#</a></h3>
 <p>You can create a Numpy array using the <code class="docutils literal notranslate"><span class="pre">np.array()</span></code> function:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -517,17 +532,289 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">]])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1. 2. 3.]
- [4. 5. 6.]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.0
 </pre></div>
 </div>
 </div>
 </div>
+<section id="more-initializing-methods">
+<h4>More initializing methods<a class="headerlink" href="#more-initializing-methods" title="Permalink to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># All 1s matrix</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;int32&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[[1 1]
+  [1 1]]
+
+ [[1 1]
+  [1 1]]
+
+ [[1 1]
+  [1 1]]
+
+ [[1 1]
+  [1 1]]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># All 0s matrix</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[[0. 0. 0.]
+  [0. 0. 0.]
+  [0. 0. 0.]]
+
+ [[0. 0. 0.]
+  [0. 0. 0.]
+  [0. 0. 0.]]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Any other number</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">99</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[99 99]
+ [99 99]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Any other number (full_like) - copy shape of another array</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">full_like</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4 4 4 4 4]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="random-numbers">
+<h4>Random Numbers<a class="headerlink" href="#random-numbers" title="Permalink to this heading">#</a></h4>
+<p>We can also generate random numbers.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Random decimal numbers</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.69858802 0.36854694]
+ [0.24143252 0.20404743]
+ [0.03222985 0.82495731]
+ [0.75254135 0.23985028]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Random Integer values (start, end, size)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[3 1 9]
+ [4 2 9]
+ [3 7 2]]
+[[ 4  2 -2]
+ [-3  6  7]
+ [ 6  6 -4]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Random numbers that follow a normal distribution</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.91757644  0.93477579  1.72478178  2.13774354 -0.23021869 -2.29382083
+ -0.03858306 -0.22844565  1.16706453  0.48180358  1.22998182  0.78366379
+ -1.45214163  1.38076612  0.21487297 -1.37576405 -0.18378876 -0.51165954
+ -0.77417807 -0.6702308  -1.25287922  0.5003666  -1.34214091 -0.37230661
+ -2.04392282 -0.25132036  0.44505337  0.10099788  0.23944978 -0.67005164
+ -0.16485469 -1.44522033  0.1254572   1.78613868 -0.3883826  -1.45304241
+ -1.35636289 -0.47765804 -0.9677432  -0.67498827 -0.11880555 -1.41566303
+  0.21014055 -1.49676959  0.3115381  -0.49581236 -3.40698781 -0.10836408
+ -0.7970611   0.52394414 -0.28758045  0.48281376  0.24107885 -2.10311495
+  0.82888799  0.40540958  0.58009827  0.21424426 -0.46938238 -0.40335774
+ -2.25372029 -0.92759076 -0.38269245  1.09809202 -0.88613012  0.59144691
+  2.87127114 -0.14020926  0.72964685  0.52059551 -0.4447406  -0.41719663
+ -0.00486875  0.0231684  -0.85528619  1.10597908 -1.35261355  0.21132248
+ -0.99352084 -0.14612128 -2.03541551  0.86509452  0.29120625 -0.44001951
+ -0.12894675  0.88282687 -0.74251974  0.28766387  0.58304927 -0.44460918
+ -0.29531421 -0.41294347  1.0098534   1.0472381  -1.29227853  0.13462601
+  0.13710222 -0.41939987 -1.01559651  0.11036226]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="other">
+<h4>Other<a class="headerlink" href="#other" title="Permalink to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The identity matrix</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">identity</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1. 0. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 0. 1. 0. 0.]
+ [0. 0. 0. 1. 0.]
+ [0. 0. 0. 0. 1.]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># linspace (start, end, number of points)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.         1.44444444 1.88888889 2.33333333 2.77777778 3.22222222
+ 3.66666667 4.11111111 4.55555556 5.        ]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># An array with a range of numbers - start, end, step</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 2 3 4]
+[1.  1.5 2.  2.5 3.  3.5 4.  4.5]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Repeat an array</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span>
+<span class="n">r1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1 2 3]
+ [1 2 3]
+ [1 2 3]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Challenge</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+
+<span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">z</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">9</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+
+<span class="n">output</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="n">z</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1. 1. 1. 1. 1.]
+ [1. 1. 1. 1. 1.]
+ [1. 1. 1. 1. 1.]
+ [1. 1. 1. 1. 1.]
+ [1. 1. 1. 1. 1.]]
+[[0. 0. 0.]
+ [0. 9. 0.]
+ [0. 0. 0.]]
+[[1. 1. 1. 1. 1.]
+ [1. 0. 0. 0. 1.]
+ [1. 0. 9. 0. 1.]
+ [1. 0. 0. 0. 1.]
+ [1. 1. 1. 1. 1.]]
+</pre></div>
+</div>
+</div>
+</div>
+<section id="be-careful-when-copying-arrays">
+<h5>Be careful when copying arrays!!!<a class="headerlink" href="#be-careful-when-copying-arrays" title="Permalink to this heading">#</a></h5>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
+<span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[100   2   3]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use copy() to avoid this</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 2 3]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
 </section>
 <section id="b-get-dimension-and-shape-of-the-arrays">
 <h3>b. Get dimension and shape of the arrays<a class="headerlink" href="#b-get-dimension-and-shape-of-the-arrays" title="Permalink to this heading">#</a></h3>
@@ -541,7 +828,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
-2
+1
 </pre></div>
 </div>
 </div>
@@ -555,8 +842,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(5,)
-(2, 3)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3,)
+(3,)
 </pre></div>
 </div>
 </div>
@@ -572,7 +859,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>int32 float64
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>int64 int64
 </pre></div>
 </div>
 </div>
@@ -585,7 +872,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4 8
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8 8
 </pre></div>
 </div>
 </div>
@@ -599,8 +886,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20 48
-20 48
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24 24
+24 24
 </pre></div>
 </div>
 </div>
@@ -611,13 +898,13 @@ document.write(`
 <p>Please install numpy and practice the following basics:</p>
 <ol class="arabic simple">
 <li><p>Install and import numpy.</p></li>
-<li><p>Create 2 different kinds of numpy arrays.</p></li>
+<li><p>Create 3 different kinds of numpy arrays, e.g. with specific numbers, random, different datatype.</p></li>
 <li><p>Get the shape, dimension, data type, itemsize and total size of the arrays.</p></li>
 </ol>
 </section>
 </section>
 <section id="accessing-changing-specific-elements-rows-columns-etc">
-<h2>3. Accessing/Changing specific elements, rows, columns, etc.<a class="headerlink" href="#accessing-changing-specific-elements-rows-columns-etc" title="Permalink to this heading">#</a></h2>
+<h2>2. Accessing/Changing specific elements, rows, columns, etc.<a class="headerlink" href="#accessing-changing-specific-elements-rows-columns-etc" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
@@ -756,206 +1043,6 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="initializing-different-types-of-arrays">
-<h2>4. Initializing Different Types of Arrays<a class="headerlink" href="#initializing-different-types-of-arrays" title="Permalink to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># All 0s matrix</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0. 0. 0.]
- [0. 0. 0.]]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># All 1s matrix</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;int32&#39;</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[[1 1]
-  [1 1]]
-
- [[1 1]
-  [1 1]]
-
- [[1 1]
-  [1 1]]
-
- [[1 1]
-  [1 1]]]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Any other number</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">99</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[99 99]
- [99 99]]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Any other number (full_like)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">full_like</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[4 4 4 4 4 4 4]
- [4 4 4 4 4 4 4]]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Random decimal numbers</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.54146022 0.19293535]
- [0.97384851 0.29443859]
- [0.06903566 0.38605404]
- [0.01998189 0.72100083]]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Random Integer values</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0 0 0]
- [6 1 2]
- [0 2 1]]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The identity matrix</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">identity</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1. 0. 0. 0. 0.]
- [0. 1. 0. 0. 0.]
- [0. 0. 1. 0. 0.]
- [0. 0. 0. 1. 0.]
- [0. 0. 0. 0. 1.]]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Repeat an array</span>
-<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span>
-<span class="n">r1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">r1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1 2 3]
- [1 2 3]
- [1 2 3]]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Challenge</span>
-<span class="n">output</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
-
-<span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
-<span class="n">z</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">9</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
-
-<span class="n">output</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="n">z</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1. 1. 1. 1. 1.]
- [1. 1. 1. 1. 1.]
- [1. 1. 1. 1. 1.]
- [1. 1. 1. 1. 1.]
- [1. 1. 1. 1. 1.]]
-[[0. 0. 0.]
- [0. 9. 0.]
- [0. 0. 0.]]
-[[1. 1. 1. 1. 1.]
- [1. 0. 0. 0. 1.]
- [1. 0. 9. 0. 1.]
- [1. 0. 0. 0. 1.]
- [1. 1. 1. 1. 1.]]
-</pre></div>
-</div>
-</div>
-</div>
-<section id="be-careful-when-copying-arrays">
-<h3>Be careful when copying arrays!!!<a class="headerlink" href="#be-careful-when-copying-arrays" title="Permalink to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
-<span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[100   2   3]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use copy() to avoid this</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 2 3]
-</pre></div>
-</div>
-</div>
-</div>
-</section>
 <section id="practice-time-5-mins">
 <h3>Practice time (5 mins)<a class="headerlink" href="#practice-time-5-mins" title="Permalink to this heading">#</a></h3>
 <p>Please practice the following:</p>
@@ -966,7 +1053,7 @@ document.write(`
 </section>
 </section>
 <section id="array-operation">
-<h2>5. Array Operation<a class="headerlink" href="#array-operation" title="Permalink to this heading">#</a></h2>
+<h2>3. Array Operation<a class="headerlink" href="#array-operation" title="Permalink to this heading">#</a></h2>
 <p>Numpy arrays support all standard arithmetic operations</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1212,11 +1299,8 @@ False
 <span class="c1"># You can index with a list in NumPy</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">filedata</span><span class="p">[[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">20</span><span class="p">]])</span>
-
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">filedata</span> <span class="o">&gt;</span> <span class="mi">50</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
-
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">filedata</span> <span class="o">&gt;</span> <span class="mi">50</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
-
 <span class="nb">print</span><span class="p">((</span><span class="o">~</span><span class="p">((</span><span class="n">filedata</span> <span class="o">&gt;</span> <span class="mi">50</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">filedata</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">))))</span>
 </pre></div>
 </div>
@@ -1224,7 +1308,7 @@ False
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">38</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">41</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Challenge</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">filedata</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="s1">&#39;data.txt&#39;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">filedata</span> <span class="o">=</span> <span class="n">filedata</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;int32&#39;</span><span class="p">)</span>
@@ -1299,6 +1383,27 @@ False
 </div>
 </div>
 </section>
+<section id="practice-time">
+<h3>Practice Time<a class="headerlink" href="#practice-time" title="Permalink to this heading">#</a></h3>
+<p>Time: 5 mins</p>
+<ol class="arabic simple">
+<li><p>Read the example dataset.</p></li>
+<li><p>Generate another random array with the same size.</p></li>
+<li><p>Compare their statistics such as mean, min, max, etc.</p></li>
+<li><p>Perform operations on these two arrays.</p></li>
+</ol>
+</section>
+</section>
+<section id="further-reading">
+<h2>Further Reading<a class="headerlink" href="#further-reading" title="Permalink to this heading">#</a></h2>
+<p>NumPy is a super useful and basic package in python. There are many free online resources to explore.</p>
+<p>For example:</p>
+<ol class="arabic simple">
+<li><p>Check their <a class="reference external" href="https://numpy.org/doc/stable/user/absolute_beginners.html">official documentation</a>, which provides very helpful descriptions and examples.</p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=DcfYgePyedM&amp;ab_channel=Mr.PSolver">Numpy Tutorial (2022): For Physicists, Engineers, and Mathematicians</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/playlist?list=PLCC34OHNcOtpalASMlX2HHdsLNipyyhbK">Numpy for Machine Learning</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=eClQWW_gbFk&amp;ab_channel=GormAnalysis">NumPy Explained - FUll Course (3 Hrs)</a></p></li>
+</ol>
 </section>
 </section>
 
@@ -1346,7 +1451,7 @@ False
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">SciPy Tutorial for Beginners</p>
+        <p class="prev-next-title">Introduction to SciPy</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1368,30 +1473,38 @@ False
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">0. Introduction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-and-import">1. Installation and Import</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-numpy-using-pip">Install NumPy using pip:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-numpy">Install NumPy</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-numpy">Importing Numpy</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-numpy-arrays-and-get-their-properties">2. Create NumPy Arrays and get their properties</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-creating-arrays">a. Creating Arrays</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-arrays-and-their-properties">2. Create arrays and their properties</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#initializing-numpy-arrays">Initializing NumPy Arrays</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#more-initializing-methods">More initializing methods</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#random-numbers">Random Numbers</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#other">Other</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#be-careful-when-copying-arrays">Be careful when copying arrays!!!</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-get-dimension-and-shape-of-the-arrays">b. Get dimension and shape of the arrays</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-get-the-data-type-item-size-and-total-size-of-the-arrays">c. Get the data type, item size, and total size of the arrays.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hands-on-practice-5-mins">Hands on practice (5 mins)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-changing-specific-elements-rows-columns-etc">3. Accessing/Changing specific elements, rows, columns, etc.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initializing-different-types-of-arrays">4. Initializing Different Types of Arrays</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#be-careful-when-copying-arrays">Be careful when copying arrays!!!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-changing-specific-elements-rows-columns-etc">2. Accessing/Changing specific elements, rows, columns, etc.</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-time-5-mins">Practice time (5 mins)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-operation">5. Array Operation</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-operation">3. Array Operation</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-reorganizing-arrays-reshape-vstack-hstack">b. Reorganizing Arrays (reshape, vstack, hstack)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing">Indexing</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing">Slicing</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shape-and-reshape">Shape and Reshape</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-time">Practice Time</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">Further Reading</a></li>
 </ul>
   </nav></div>
 

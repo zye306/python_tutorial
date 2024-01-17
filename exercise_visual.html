@@ -177,12 +177,15 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="2_data_analysis.html">2. Data Analysis Basics</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="numpy.html">NumPy Tutorial for Beginners</a></li>
-<li class="toctree-l2"><a class="reference internal" href="scipy.html">SciPy Tutorial for Beginners</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="1_basics.html">Python Basics</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="3_data_visual.html">3. Data Visualization Basics</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="2_data_analysis.html">2. Data Analysis Basics</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html">NumPy Tutorial for Beginners</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scipy.html">Introduction to SciPy</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="3_data_visual.html">3. Data Visualization Basics</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="seaborn.html">Seaborn Tutorial for Beginners</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plotly.html">Data Visualization with plotly</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Exercise of Data Visualization</a></li>
@@ -432,6 +435,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-the-example-data-optional">Download the example data (Optional)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-before-download">Prepare before download</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-quick-fix-if-you-fail-to-download">A quick fix if you fail to download</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read-the-data">Read the data</a></li>
 </ul>
             </nav>
@@ -446,6 +454,25 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="exercise-of-data-visualization">
 <h1>Exercise of Data Visualization<a class="headerlink" href="#exercise-of-data-visualization" title="Permalink to this heading">#</a></h1>
+<section id="download-the-example-data-optional">
+<h2>Download the example data (Optional)<a class="headerlink" href="#download-the-example-data-optional" title="Permalink to this heading">#</a></h2>
+<p>In this practice, we can choose to use the European air quality forecast dataset from <a class="reference external" href="https://atmosphere.copernicus.eu/">CAMS (Copernicus Atmosphere Monitoring Service)</a>. You can download this <a class="reference external" href="https://atmosphere.copernicus.eu/sites/default/files/custom-uploads/UW%20Denmark/CAMS2.0%20Product%20Portfolio.xlsx">CAMS 2.0 Product Portfolio</a> to see more information on the products. You can follow the instructions below to download the example dataset using python.</p>
+</section>
+<section id="prepare-before-download">
+<h2>Prepare before download<a class="headerlink" href="#prepare-before-download" title="Permalink to this heading">#</a></h2>
+<p>To download the data, we will use CDS API. The Copernicus website has provided a practical <a class="reference external" href="https://ads.atmosphere.copernicus.eu/api-how-to">instruction</a>, please follow the steps.</p>
+<p>The steps are also described below:</p>
+<ol class="arabic simple">
+<li><p>Register an account in ADS <a class="reference external" href="https://ads.atmosphere.copernicus.eu/user/register?destination=%2F%23!%2Fhome">here</a>.</p></li>
+<li><p><a class="reference external" href="https://ads.atmosphere.copernicus.eu/user/login?destination=%2F%23!%2Fhome">Login</a> to the ADS using your account.</p></li>
+<li><p>Copy the code <a class="reference external" href="https://ads.atmosphere.copernicus.eu/api-how-to">displayed</a> after login (refresh the page may help) and paste to th file ~/.cdsapirc</p></li>
+<li><p>Install</p></li>
+</ol>
+<section id="a-quick-fix-if-you-fail-to-download">
+<h3>A quick fix if you fail to download<a class="headerlink" href="#a-quick-fix-if-you-fail-to-download" title="Permalink to this heading">#</a></h3>
+<p>If you fail to download the data or you don’t want to spend time to figure out how to download yourself. We have a already downloaded dataset for you to start the next part.</p>
+</section>
+</section>
 <section id="read-the-data">
 <h2>Read the data<a class="headerlink" href="#read-the-data" title="Permalink to this heading">#</a></h2>
 <p>The file is in netcdf format. We will use <code class="docutils literal notranslate"><span class="pre">xarray</span></code> package to read the file.</p>
@@ -575,6 +602,11 @@ Attributes:
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-the-example-data-optional">Download the example data (Optional)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-before-download">Prepare before download</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-quick-fix-if-you-fail-to-download">A quick fix if you fail to download</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read-the-data">Read the data</a></li>
 </ul>
   </nav></div>
