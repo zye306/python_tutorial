@@ -1,6 +1,9 @@
 # 2. Data Analysis Basics
 
-In this chapter, we are going to introduce some basic python packages that are used for data analysis. 
+In this chapter, we are going to introduce some basic python packages that are used for data analysis.
+
+Objectives:
+
 
 This chapter include the following sections:
 
