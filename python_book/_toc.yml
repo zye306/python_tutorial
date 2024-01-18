@@ -1,0 +1,39 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+  - caption: "Introduction"
+    chapters:
+      - file: 0_intro/about
+  
+  - caption: "Environment Setup"
+    chapters:
+      - file: 1_environment/environment
+
+  - caption: "Python Basics"
+    chapters:
+      - file: 2_basics/basics
+
+  - caption: "Data Analysis"
+    chapters:
+      - file: 3_data_analysis/data_analysis
+      - file: 3_data_analysis/numpy
+      - file: 3_data_analysis/scipy
+
+  - caption: "Data Visualization"
+    chapters:
+      - file: 4_data_visual/visualization
+      - file: 4_data_visual/seaborn
+      - file: 4_data_visual/plotly
+      - file: 4_data_visual/exercise_visual
+  
+  - caption: "AI-assisted Coding"
+    chapters:
+      - file: 5_AI_coding/copilot
+
+  - caption: "Explore more data"
+    chapters:
+      - file: 7_open_data/open_data
+      - file: 7_open_data/cams
